@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Viswesh Portfolio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Cardo:400,400italic,700">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body data-spy="scroll" data-target="#navigation" data-offset="120">
+    <!-- intro-->
+    <section id="intro" style="background-image: url('img/backcover.jpg');" class="intro">      
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-12">
+              <p class="italic">Hi!</p>
+              <h1>I'm Viswesh</h1>
+              <p class="italic">a web developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- intro end-->
+    <!-- navbar-->
+    <header class="header">
+      <div class="sticky-wrapper">
+        <div role="navigation" class="navbar navbar-default">
+          <div class="container">
+            <div id="navigation" class="collapse navbar-collapse navbar-left">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#intro">Home</a></li>              
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#personalprojects">Projects</a></li>            
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /.navbar-->
+    <!-- about-->
+    <section id="about" class="text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>I love web development! I have been fascinated by the web right from the days of static pages and strobe advertisements to interactive SPAs and intuitive visualizations. We are in an era where user interface and user experience plays a critical role in a business’s success. I strongly believe that if there is no pretty face to an esoteric algorithm, it’s almost like offering an XXL T-shirt to a petite lady. </p>
+            <p>– A user interface is a like a joke. If you have to explain it, its not that good.</p>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+             <div class="profilepicture">
+                <img src="img/4.jpg" alt="Profile picture" class="img-rounded img-responsive" style="margin:3px 0px; max-width: 50%">      
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about end-->
+    <!-- Experience-->
+    <section id="experience" >    
+      <div class="container" style="background-color: #eee">
+       
+        <div class="row experience">
+          <div class="col-md-12">
+            <h4 class="heading">BMC - Staff Specialist product developer <span class="pull-right">Feb'13-Till Date</span></h4>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="box">
+                  <div class="icon"><i class="fa fa-desktop"></i></div>
+                  <h4>AngularJS</h4>
+                  <p>Developed <a href="http://bmc.com/clm" target="_blank">cloud resources provisioning </a> and <a href="http://www.bmc.com/it-solutions/remedy-smart-it.html" target="_blank">self service portals</a> using AngularJS.</p>                
+                  <p>Pioneered build automation through grunt. Used grunt-contrib-uglify for obfuscation, grunt-contrib-sass for transforming .sass files, grunt-contrib-watch to sync source and target folders, grunt-karma to develop and run jasmine unit tests. </p>
+                  <p>Increased page load time by assessing and optimizing Critical Rendering Path. </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fa fa-mobile"></i>
+                    <i class="fa fa-android"></i>
+                  </div>                
+                  <h4>Android</h4>
+                  <p>Developed native <a href="https://play.google.com/store/apps/details?id=com.bmc.myitsm&hl=en" target="_blank">Android application</a> for users to view/create/edit service requests, incidents, change requests, problem tickets and known error tickets.</p>
+                  <p>Developed generic UI for all screen sized Android smartphones and tablets. </p>
+                  <p>Upgraded the application to <a target="_blank"  href="http://developer.android.com/design/material/index.html">Material design specifications</a> by using the AppCompat library. </p>
+                </div>
+              </div>
+            </div>
+          </div>      
+        </div>
+      </div>
+
+      <div class="container section-inverse" style="background-color: #333">
+        <div class="row experience">
+          <div class="col-md-12">
+            <h4 class="heading">BMC - Staff product developer<span class="pull-right">Jun'11-Jan'13</span></h4>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-line-chart"></i>
+                    <i class="fa fa-bar-chart"></i>
+                    <i class="fa fa-area-chart"></i>
+                  </div>                        
+                  <p>Developed cloud infrastructure service designer using yFiles JavaScript library. The service designer enabled administrators to author cloud services and provide offerings to end users through AWS / VMWare.</p> 
+                  <p>Built a dashboard to host monitoring, auto scale policy designer and audit widgets. For monitoring, Line charts were rendered using d3.js to display server group / server metrics.</p> 
+                  <p>Auto scale policy designer was developed by customizing jQuery UI portlet’s and Twitters bootstrap. </p>
+                  <p>Built an interactive heatmap visualization using d3.js which visualizes a service and its underlying components like service offering, service offering instance, server group and servers based on health metrics. </p>
+                  <p> Used RequreJS to load modules. Leveraged UnderscoreJS to be productive. </p>
+                  <p>Used Google closure (compiler, templates, stylesheets, linter) to develop reusable components as part of platform development. </p>
+                </div>
+              </div>
+            </div>
+          </div>      
+        </div>
+      </div>
+
+      <div class="container" style="background-color: #eee">
+        <div class="row experience">
+          <div class="col-md-12">
+            <h4 class="heading">BMC - Consultant<span class="pull-right">Dec'09-Jun'11</span></h4>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-gear"></i>
+                  </div>                        
+                  <p>Developed BMC’s Service Request Management using HTML, CSS JavaScript and proprietary development platform ‘Remedy Action Request’ system.</p>
+                  <p>jQueryUI widgets were used to provide functionality and user interaction. Created custom reusable jQuery widgets based on requirements. </p>
+                  <p>Incrementally replaced legacy UI with modern web standards. </p>
+                </div>
+              </div>
+            </div>
+          </div>      
+        </div>
+      </div>
+
+      <div class="container section-inverse" style="background-color: #333">
+        <div class="row experience">
+          <div class="col-md-12">
+            <h4 class="heading">Mark InfoTech - Web developer <span class="pull-right">Jul'09-Dec'09</span></h4>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-gear"></i>
+                  </div>                        
+                  <p>Resurrected user experience by transforming outdated user interfaces to modern web standards. </p>
+                  <p>jQuery was used for DOM manipulation. jQueryUI was used to offer interactive controls. </p>
+                  <p>Consumed and published web services using WSDL, SOAP, XML to establish communication between remedy and an external system for streamlining CRUD operations.</p>
+                </div>
+              </div>
+            </div>
+          </div>      
+        </div>
+      </div>
+
+      <div class="container" style="background-color: #eee">
+        <div class="row experience">
+          <div class="col-md-12">
+            <h4 class="heading">CSS, Chennai - Associate Product Developer <span class="pull-right">Sep'06-Aug'07</span></h4>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-support"></i>
+                  </div>                        
+                  <p>Provided technical support for CSS enabled applications. Troubleshooted customer issues, documented reproducible steps, retrieved logs and updated issue records. </p>
+                  <p>Impersonated a sponge and plunged into the world of IT, web development and all things internet. </p>
+
+                </div>
+              </div>
+            </div>
+          </div>      
+        </div>
+      </div>
+
+      <div class="container section-inverse" style="background-color: #333">
+        <div class="row experience">
+          <div class="col-md-12">
+            <h4 class="heading">Education</h4>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="box">
+                  <div class="icon">
+                    <i class="fa fa-graduation-cap"></i>                  
+                  </div>                        
+                  <p>Master of Science in Telecommunication.  <span>Aug ‘07 – Jun ‘09</span></p>
+                  <p><a href="http://www.sunyit.edu/homepage/?cms=webace" target="_blank"> State University of New York Institute of Technology</a></p>
+                
+                 
+                  <p>Bachelor of engineering in Electronics and Communication. <span>Jun ‘02 – Sep ‘06</span></p>
+                  <p><a href="https://www.annauniv.edu/" target="_blank">Anna University</a></p>                 
+
+                </div>
+              </div>
+
+                <div class="col-sm-6"> 
+                  <div class="box">               
+                   <div class="icon">                  
+                      <i class="fa fa-certificate"></i>
+                    </div> 
+
+                    <p>OWASP Web Application Security (Open Web Application Security Project)</p>
+                    <p>ITIL V3 Foundation</p>
+                    </div>
+                </div>
+
+            </div>
+
+              <div class="row">
+                 <div class="col-sm-12">
+                      <div class="icon">                  
+                        <i class="fa fa-microphone"></i>
+                      </div> 
+                      <p><a href="http://wwrug13.com/speakers.html" target="_blank">WWRUG13</a>, San Jose, Unleashing the power of ITSM data through visualization, Oct 2nd 2013. </p>
+                  </div>
+              </div>
+            </div>
+
+
+            </div>
+          </div>      
+        </div>
+      </div>
+    </section>
+    <!-- Experience end-->
+
+    <!-- Personal Projects-->
+    <section id="personalprojects" class="gallery">
+      <div class="container clearfix">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12 col-lg-8">              
+                <p></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="box"><a href="projects/bex/index.html" target="_blank" title="" data-gallery="portfolio" data-title="Portfolio image 1" data-footer="Some footer information"><img src="img/bexscreen.jpg" alt="" class="img-responsive"></a></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="box"><a href="projects/weatherme/index.html" target="_blank" title="" data-gallery="portfolio" data-title="Portfolio image 2" data-footer="Some footer information"><img src="img/weathermescreen.jpg" alt="" class="img-responsive"></a></div>
+              </div>            
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Personal Projects end -->
+
+    <!-- Contact me! -->
+    <section id="contact" style="background-color: #fff;"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="heading">Contact</h2>
+            <div class="row">
+            <!--  <div class="col-md-6">
+                 <form id="contact-form" method="post" action="#" class="contact-form">
+                  <div class="controls">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="name">Your firstname *</label>
+                          <input type="text" name="name" placeholder="Enter your firstname" required="required" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="surname">Your lastname *</label>
+                          <input type="text" name="surname" placeholder="Enter your  lastname" required="required" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="surname">Your email *</label>
+                      <input type="email" name="email" placeholder="Enter your  email" required="required" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="surname">Your message for me *</label>
+                      <textarea rows="4" name="message" placeholder="Enter your message" required="required" class="form-control"></textarea>
+                    </div>
+                    <div class="text-center">
+                      <input type="submit" name="name" value="Send message" class="btn btn-primary btn-block">
+                    </div>
+                  </div>
+                </form> 
+              </div>-->
+
+              <div class="col-md-6">
+                <p class="social">
+                  <a href="https://github.com/viswesh" target="_blank"  title="Github link" class="twitter"><i class="fa fa-github"></i></a>
+                  <a href="https://twitter.com/viswesh" target="_blank"  title="Twitter link" class="twitter"><i class="fa fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/wityvis/" target="_blank" title="Instagram link" class="instagram"><i class="fa fa-instagram"></i></a>
+                  <a href="mailto:ns.viswesh@gmail.com?Subject=Hello%20Viswesh" target="_top" title="" class="email"><i class="fa fa-envelope"></i></a>                  
+                </p>
+                <p><i class="fa fa-phone"></i> 315.266.7050 </p>
+                <p>  Bay Area </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

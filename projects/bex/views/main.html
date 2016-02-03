@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-12">
+      <h1 ng-if="searchParam" ng-bind="searchParam" class="text-center text-muted"></h1>
+      <h1 ng-if="!searchParam" class="text-center text-muted">
+        Loading...... 
+      </h1>
+       <blockquote ng-if="searchParamDefinition">  
+        <footer><cite title="Source Title" ng-bind="searchParamDefinition"></cite></footer>
+       </blockquote>
+     <div class="pull-right readercontrols">
+      <span class="text-muted" aria-hidden="true" ng-bind="counter"></span>     
+      <span class="glyphicon  text-muted" ng-class="{ 'glyphicon-play': counterpolling==undefined , 'glyphicon-pause': counterpolling!=undefined}" ng-click="toggleStartStop()" aria-hidden="true"></span>
+     </div>
+  </div>   
+
+  <book-list></book-list>
+</div>
