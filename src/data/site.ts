@@ -8,7 +8,7 @@ export const site = {
     github: 'https://github.com/viswesh',
     linkedin: 'https://www.linkedin.com/in/viswesh-subramanian-848a6736',
     twitter: 'https://twitter.com/viswesh',
-    workshop: 'https://luma.com/e8xut60e',
+    workshop: 'https://luma.com/viswesh',
   },
   url: 'https://viswesh.github.io',
 } as const;

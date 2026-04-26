@@ -1,10 +1,11 @@
 {
   "workshop": {
-    "title": "From Agent Demo to Agent System: A Production Architecture Workshop",
-    "url": "https://luma.com/e8xut60e",
+    "title": "Upcoming workshops on production AI agent infrastructure",
+    "url": "https://luma.com/viswesh",
     "nextSession": null
   },
   "past": [
+    {"title": "From Agent Demo to Agent System: A Production Architecture Workshop", "venue": "Luma", "year": 2026, "url": "https://luma.com/e8xut60e"},
     {"title": "Find fulfillment by confronting your fears and constructing success", "venue": "The Stage", "year": 2021},
     {"title": "Unleashing the power of ITSM data through visualization", "venue": "WWRUG13 San Jose", "year": 2013}
   ]
