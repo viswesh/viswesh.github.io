@@ -1,0 +1,18 @@
+---
+import ThemeToggle from './islands/ThemeToggle.tsx';
+import { site } from '../data/site';
+---
+<nav class="sticky top-0 z-50 backdrop-blur bg-[var(--color-bg)]/70 border-b border-[var(--color-fg)]/10">
+  <div class="max-w-5xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
+    <a href="#top" class="font-mono text-sm font-bold">VS</a>
+    <ul class="hidden sm:flex items-center gap-6 text-sm font-mono">
+      <li><a href="#now" class="hover:text-[var(--color-accent)]">Now</a></li>
+      <li><a href="#about" class="hover:text-[var(--color-accent)]">About</a></li>
+      <li><a href="#experience" class="hover:text-[var(--color-accent)]">Experience</a></li>
+      <li><a href="#writing" class="hover:text-[var(--color-accent)]">Writing</a></li>
+      <li><a href="#projects" class="hover:text-[var(--color-accent)]">Projects</a></li>
+      <li><a href="#contact" class="hover:text-[var(--color-accent)]">Contact</a></li>
+      <li><ThemeToggle client:load /></li>
+    </ul>
+  </div>
+</nav>

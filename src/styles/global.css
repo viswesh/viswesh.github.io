@@ -33,3 +33,14 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+:root[data-theme="dark"] {
+  --color-bg: #0F0F0F;
+  --color-fg: #FAF9F6;
+  --color-muted: #9A9A9A;
+}
+:root[data-theme="light"] {
+  --color-bg: #FAF9F6;
+  --color-fg: #0F0F0F;
+  --color-muted: #6B6B6B;
+}
