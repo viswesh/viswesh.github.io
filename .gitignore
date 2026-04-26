@@ -6,3 +6,6 @@ dist/
 .env.*
 !.env.example
 .worktrees/
+test-results/
+playwright-report/
+
