@@ -9,6 +9,12 @@ import { speaking } from '../lib/content';
     {speaking.workshop.nextSession && <p class="mt-3 text-base text-[var(--color-muted)]">Next session: {speaking.workshop.nextSession}</p>}
     <span class="inline-block mt-5 font-mono text-sm group-hover:underline">See upcoming sessions on Luma →</span>
   </a>
+  <p class="text-sm text-[var(--color-muted)] mb-10 -mt-6">
+    Workshop materials and reference implementation:
+    <a href="https://viswesh.github.io/ecommerceSupportAgent/" target="_blank" rel="noopener noreferrer" class="font-mono hover:text-[var(--color-accent)] underline underline-offset-4">workshop site</a>
+    ·
+    <a href="https://github.com/viswesh/ecommerceSupportAgent" target="_blank" rel="noopener noreferrer" class="font-mono hover:text-[var(--color-accent)] underline underline-offset-4">GitHub repo</a>
+  </p>
   <p class="font-mono text-xs uppercase tracking-widest text-[var(--color-muted)] mb-3">Past sessions</p>
   <ul class="divide-y divide-[var(--color-fg)]/10">
     {speaking.past.map(t => (

@@ -14,9 +14,10 @@ test('hero CTAs link out correctly', async ({ page }) => {
   await expect(workshop).toHaveAttribute('href', /luma\.com/);
 });
 
-test('agent harness page renders 9 components', async ({ page }) => {
-  await page.goto('/projects/agent-harness/');
-  await expect(page.locator('ol > li')).toHaveCount(9);
+test('projects section links to external workshop site', async ({ page }) => {
+  await page.goto('/');
+  const workshopLink = page.locator('#projects a[href*="ecommerceSupportAgent"]').first();
+  await expect(workshopLink).toBeVisible();
 });
 
 test('theme toggle switches data-theme attribute', async ({ page }) => {

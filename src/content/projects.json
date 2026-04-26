@@ -1,9 +1,14 @@
 [
   {
-    "slug": "agent-harness",
-    "title": "Agent Harness Reference Architecture",
-    "blurb": "A 9-component reference architecture for production AI agent infrastructure: sandbox, context engineering, orchestration, cost controls, tool access, memory, guardrails, observability, evals. Open and growing.",
-    "cta": {"label": "Read the breakdown", "url": "/projects/agent-harness/"},
-    "detailPage": "/projects/agent-harness/"
+    "slug": "agent-harness-workshop",
+    "title": "Agent Harness Workshop — eCommerce Support Agent",
+    "blurb": "A 90-minute workshop and a working reference implementation for production AI agent infrastructure: input/output guardrails, agent loop, context engineering, memory, MCP tool access, per-ticket sandboxes, LiteLLM cost tracking, Langfuse tracing. Cloneable repo, recorded session, adaptable architecture — built for engineering leaders who are shipping agents without half the guardrails.",
+    "cta": {"label": "Open the workshop site", "url": "https://viswesh.github.io/ecommerceSupportAgent/"}
+  },
+  {
+    "slug": "agent-harness-repo",
+    "title": "Reference repo: ecommerceSupportAgent",
+    "blurb": "The cloneable code behind the workshop. Real agent loop, MCP tools, per-ticket sandboxes, evals, observability — wired together end-to-end so engineering teams can fork and ship.",
+    "cta": {"label": "View on GitHub", "url": "https://github.com/viswesh/ecommerceSupportAgent"}
   }
 ]
