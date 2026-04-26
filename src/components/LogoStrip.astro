@@ -1,0 +1,22 @@
+---
+import { customers } from '../lib/content';
+
+interface Props {
+  group: string;
+  caption?: string;
+}
+const { group, caption } = Astro.props;
+const list = customers[group] ?? [];
+---
+{list.length > 0 && (
+  <div class="mt-6">
+    {caption && <p class="text-xs uppercase tracking-widest font-mono text-[var(--color-muted)] mb-3">{caption}</p>}
+    <ul class="flex flex-wrap items-center gap-x-8 gap-y-4 opacity-70 hover:opacity-100 transition">
+      {list.map((c) => (
+        <li class="text-sm font-mono whitespace-nowrap" title={c.name}>
+          <img src={`/logos/${c.logoSlug}.svg`} alt={c.name} height="20" class="h-5 w-auto inline-block dark:invert" loading="lazy" />
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
