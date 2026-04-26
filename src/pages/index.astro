@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import { site } from '../data/site';
 ---
-<BaseLayout title="Viswesh Subramanian — Senior Engineering Manager" description="I lead engineering teams building production AI agents — and I still ship the harness underneath them.">
-  <h1 class="text-6xl" style="font-family: var(--font-display)">Viswesh Subramanian</h1>
+<BaseLayout title={`${site.name} — ${site.role}`} description={site.tagline}>
+  <Hero />
 </BaseLayout>

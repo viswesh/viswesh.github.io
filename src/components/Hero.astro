@@ -1,0 +1,15 @@
+---
+import HeroAnimation from './islands/HeroAnimation.tsx';
+import { site } from '../data/site';
+---
+<section id="top" class="px-6 sm:px-10 pt-32 sm:pt-44 pb-20 sm:pb-28 max-w-5xl mx-auto">
+  <HeroAnimation client:load name={site.name} role={site.role} tagline={site.tagline} />
+  <div class="mt-12 flex flex-wrap gap-4">
+    <a href={site.links.workshop} class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--color-fg)] text-[var(--color-bg)] hover:opacity-90 transition" target="_blank" rel="noopener noreferrer">
+      Join the free workshop →
+    </a>
+    <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--color-fg)] hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)] transition">
+      Get in touch
+    </a>
+  </div>
+</section>
