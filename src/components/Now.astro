@@ -1,0 +1,16 @@
+---
+import Section from './Section.astro';
+import { now } from '../lib/content';
+
+const pretty = new Date(now.date + '-01').toLocaleString('en-US', { month: 'long', year: 'numeric' });
+---
+<Section id="now" eyebrow="Now" title={`What I'm building · ${pretty}`}>
+  <ul class="space-y-5 text-lg max-w-3xl">
+    {now.bullets.map((b: string) => (
+      <li class="flex gap-4">
+        <span class="text-[var(--color-accent)] font-mono shrink-0 mt-1">→</span>
+        <span set:html={b} />
+      </li>
+    ))}
+  </ul>
+</Section>
