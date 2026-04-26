@@ -1,0 +1,13 @@
+---
+import Section from './Section.astro';
+import { site } from '../data/site';
+---
+<Section id="contact" eyebrow="Contact" title="Find me">
+  <p class="text-lg max-w-2xl mb-8">{site.location}. Best for: Director-of-Engineering roles in AI infra, AI-native products, or context engineering for enterprise data.</p>
+  <ul class="grid sm:grid-cols-2 gap-3 max-w-xl">
+    <li><a class="font-mono text-base hover:text-[var(--color-accent)] underline underline-offset-4" href={`mailto:${site.email}`}>{site.email}</a></li>
+    <li><a class="font-mono text-base hover:text-[var(--color-accent)] underline underline-offset-4" href={site.links.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a class="font-mono text-base hover:text-[var(--color-accent)] underline underline-offset-4" href={site.links.github} target="_blank" rel="noopener">GitHub</a></li>
+    <li><a class="font-mono text-base hover:text-[var(--color-accent)] underline underline-offset-4" href={site.links.twitter} target="_blank" rel="noopener">Twitter / X</a></li>
+  </ul>
+</Section>
