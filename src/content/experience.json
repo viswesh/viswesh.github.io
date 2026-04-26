@@ -1,3 +1,64 @@
 [
-  { "company": "Atlan", "role": "Senior Engineering Manager", "start": "2025-03", "end": "present", "scope": "stub", "outcome": "stub", "depth": "stub" }
+  {
+    "company": "Atlan",
+    "role": "Senior Engineering Manager",
+    "start": "2025-03",
+    "end": "present",
+    "location": "Remote",
+    "scope": "Lead 24+ engineers building Atlan's context layer for enterprise AI — unifying data products, domains, lineage, and contracts into a shared Enterprise Data Graph. Cross-functional with a ~200-person engineering org.",
+    "outcome": "Atlan moved Visionary → Leader on the 2026 Gartner MQ for D&A Governance during this tenure. Harness work driving customer-ticket resolution to ~5 hours with AI in the loop.",
+    "depth": "Architecting the 9-component agent harness — context engineering, memory, cost controls, observability, evals. Shipping MCP integrations (Drive & Discover demo).",
+    "customers": ["nasdaq", "gm", "fox", "unilever", "hubspot"]
+  },
+  {
+    "company": "Adobe",
+    "role": "Software Engineering Manager",
+    "start": "2021-11",
+    "end": "2025-04",
+    "location": "Remote, India",
+    "scope": "Led 12 engineers owning Privacy, Unified Profile, Unified Permissions Framework, Use Case Playbooks, and Sandbox management for Adobe Experience Platform — the CDP behind Real-Time CDP and Journey Optimizer. Built the Bangalore and Noida teams complementing Adobe's US-side org.",
+    "outcome": "Shipped Privacy stack (Data Hygiene, Privacy Console, audits) automating GDPR/CCPA across Experience Cloud. Unified Permissions Framework went GA as Attribute-Based Access Control across Real-Time CDP and Journey Optimizer. Use Case Playbooks shipped a Playbook Authoring Framework (Apr 2025). Sandbox tooling shipped iterative cross-sandbox config migration (Jun 2025) and B2B architecture support (Jul 2025). Platform underneath: 10–14 second customer-data refresh cycle; streaming segmentation up to 15K events/sec.",
+    "depth": "React/TypeScript SPAs at cloud-native scale. Architected pattern convergence and infrastructure upgrades. Defined developer-velocity tooling and the experimentation environment.",
+    "customers": ["coca-cola", "home-depot", "gm", "tsb", "mlb", "panera", "henkel", "telefonica", "t-rowe-price", "servicenow", "ey"]
+  },
+  {
+    "company": "Adobe",
+    "role": "Senior UI Engineer",
+    "start": "2019-06",
+    "end": "2021-11",
+    "location": "SF Bay Area",
+    "scope": "IC + tech lead for Experience Platform's first-time user experience for marketers; product manager for the Entity Lifecycle Management initiative.",
+    "outcome": "Built the ML workspace data scientists use to train and score propensity, conversion, and churn models inside AEP. Entity Lifecycle Management cut COGS and improved data-engineer productivity. Customer outcomes attributable to the platform during this period: Home Depot (+62% personalized campaigns, +50% YoY marketing productivity); TSB Bank (39% more product conversions, 300% lift in mobile journey completion).",
+    "depth": "React frontend for ingestion, modeling, governance workflows; cross-platform analytics instrumentation."
+  },
+  {
+    "company": "Juniper Networks",
+    "role": "Staff Software Engineer",
+    "start": "2016-03",
+    "end": "2019-06",
+    "location": "SF Bay Area",
+    "scope": "Internal PM + engineer for network editor, unified dashboard, and visualization across 8+ cross-functional teams.",
+    "outcome": "40% lift in development velocity (UX patterns + API standards). 30% reduction in licensing charges (consolidated map provider across network apps). 40% reduction in network authoring time (reusable geo component). Security Director mobile app helped close 2 large enterprise accounts.",
+    "depth": "Authored an Augmented Reality MVP for network admins demonstrating 25% faster configuration. Built Matomo-based analytics provider and a preferences provider used across products."
+  },
+  {
+    "company": "BMC Software",
+    "role": "Staff Specialist Product Developer",
+    "start": "2013-02",
+    "end": "2016-03",
+    "location": "San Jose / Bangalore",
+    "scope": "Tech lead for ITSM mobile + cloud lifecycle management.",
+    "outcome": "Native Android app for ITSM lifted NPS by 50%. List-based asset visualization lifted retention by 30%, cut churn by 20%. Spoke at WWRUG13 San Jose on ITSM data visualization.",
+    "depth": "AngularJS, Android (AppCompat / Material Design), d3.js, Google Closure. Pioneered Grunt-based build automation across the BMC frontend."
+  },
+  {
+    "company": "BMC Software",
+    "role": "Staff Product Developer",
+    "start": "2009-12",
+    "end": "2013-01",
+    "location": "San Jose",
+    "scope": "End-user, tenant, and admin portals for cloud services.",
+    "outcome": "Cloud infrastructure service designer cut operations cost by 80% through templatized provisioning. Auto-scale policy designer automated IT ops, reducing manual error and improving availability.",
+    "depth": "Visualization layer for asset health, compute, and storage metrics; jQuery UI portlet customization on Twitter Bootstrap; d3.js heatmaps."
+  }
 ]

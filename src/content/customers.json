@@ -1,1 +1,22 @@
-{ "atlan": [], "adobe-experience-platform": [] }
+{
+  "atlan": [
+    {"name": "Nasdaq", "logoSlug": "nasdaq"},
+    {"name": "General Motors", "logoSlug": "gm"},
+    {"name": "FOX", "logoSlug": "fox"},
+    {"name": "Unilever", "logoSlug": "unilever"},
+    {"name": "HubSpot", "logoSlug": "hubspot"}
+  ],
+  "adobe-experience-platform": [
+    {"name": "The Coca-Cola Company", "logoSlug": "coca-cola"},
+    {"name": "The Home Depot", "logoSlug": "home-depot"},
+    {"name": "General Motors", "logoSlug": "gm"},
+    {"name": "TSB Bank", "logoSlug": "tsb"},
+    {"name": "Major League Baseball", "logoSlug": "mlb"},
+    {"name": "Panera Bread", "logoSlug": "panera"},
+    {"name": "Henkel", "logoSlug": "henkel"},
+    {"name": "Telefónica", "logoSlug": "telefonica"},
+    {"name": "T. Rowe Price", "logoSlug": "t-rowe-price"},
+    {"name": "ServiceNow", "logoSlug": "servicenow"},
+    {"name": "EY", "logoSlug": "ey"}
+  ]
+}

@@ -1,1 +1,9 @@
-{ "date": "2026-04", "bullets": ["stub one", "stub two"] }
+{
+  "date": "2026-04",
+  "bullets": [
+    "Leading 24+ engineers building Atlan's <a href=\"https://atlan.com/context-layer/\" class=\"underline decoration-[var(--color-accent)] underline-offset-4\" target=\"_blank\" rel=\"noopener\">context layer for AI</a> — unifying data products, domains, lineage, and contracts into a shared Enterprise Data Graph. Over a dozen production agents shipping today, working across a ~200-person engineering org.",
+    "Building the agent harness driving customer-ticket resolution to ~5 hours with AI in the loop.",
+    "Running a free public workshop on production agent harnesses.",
+    "Authoring a 9-component reference architecture for AI agent infrastructure."
+  ]
+}

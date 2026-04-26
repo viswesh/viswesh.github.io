@@ -1,3 +1,9 @@
 [
-  { "slug": "stub", "title": "stub", "blurb": "stub", "cta": { "label": "stub", "url": "/" } }
+  {
+    "slug": "agent-harness",
+    "title": "Agent Harness Reference Architecture",
+    "blurb": "A 9-component reference architecture for production AI agent infrastructure: sandbox, context engineering, orchestration, cost controls, tool access, memory, guardrails, observability, evals. Open and growing.",
+    "cta": {"label": "Read the breakdown", "url": "/projects/agent-harness/"},
+    "detailPage": "/projects/agent-harness/"
+  }
 ]
