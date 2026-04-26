@@ -1,0 +1,20 @@
+---
+import Section from './Section.astro';
+import WritingCard from './WritingCard.astro';
+import { writing } from '../lib/content';
+
+const featured = writing.filter(w => w.featured);
+const rest = writing.filter(w => !w.featured).sort((a, b) => b.date.localeCompare(a.date));
+---
+<Section id="writing" eyebrow="Writing" title="What I've been thinking out loud about">
+  <div class="grid md:grid-cols-2 gap-5">
+    {featured.map(w => (
+      <WritingCard {...w} large />
+    ))}
+  </div>
+  {rest.length > 0 && (
+    <div class="grid md:grid-cols-2 gap-5 mt-5">
+      {rest.map(w => <WritingCard {...w} />)}
+    </div>
+  )}
+</Section>

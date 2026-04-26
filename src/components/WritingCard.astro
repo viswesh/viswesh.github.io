@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  date: string;
+  hook: string;
+  impressions: number;
+  tag: 'strategy' | 'builder' | 'leader';
+  large?: boolean;
+}
+const { title, url, date, hook, impressions, tag, large = false } = Astro.props;
+
+const tagLabel = { strategy: 'Strategy', builder: 'Builder', leader: 'Leader' }[tag];
+const fmtImp = new Intl.NumberFormat('en-US').format(impressions);
+const fmtDate = new Date(date + '-01').toLocaleString('en-US', { month: 'short', year: 'numeric' });
+---
+<a href={url} target="_blank" rel="noopener noreferrer" class={`group block rounded-2xl border border-[var(--color-fg)]/15 hover:border-[var(--color-accent)] transition p-6 ${large ? 'sm:p-10' : ''}`}>
+  <div class="flex items-center justify-between gap-3 mb-3">
+    <span class="font-mono text-xs uppercase tracking-widest text-[var(--color-muted)]">{tagLabel} · {fmtDate}</span>
+    <span class="font-mono text-xs text-[var(--color-muted)]">{fmtImp} imp</span>
+  </div>
+  <h3 class={`leading-snug ${large ? 'text-2xl sm:text-3xl' : 'text-xl'}`} style="font-family: var(--font-display); font-weight: 600;">{title}</h3>
+  <p class={`mt-3 text-[var(--color-muted)] ${large ? 'text-base' : 'text-sm'}`}>{hook}</p>
+  <span class="inline-block mt-4 text-sm font-mono group-hover:text-[var(--color-accent)] transition">Read on LinkedIn →</span>
+</a>

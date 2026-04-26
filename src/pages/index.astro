@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import Now from '../components/Now.astro';
 import About from '../components/About.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
+import WritingGrid from '../components/WritingGrid.astro';
 import { site } from '../data/site';
 ---
 <BaseLayout title={`${site.name} — ${site.role}`} description={site.tagline}>
@@ -11,4 +12,5 @@ import { site } from '../data/site';
   <Now />
   <About />
   <ExperienceTimeline />
+  <WritingGrid />
 </BaseLayout>
