@@ -1,0 +1,20 @@
+---
+import Section from './Section.astro';
+import { speaking } from '../lib/content';
+---
+<Section id="speaking" eyebrow="Speaking" title="Where I've shown up live">
+  <a href={speaking.workshop.url} target="_blank" rel="noopener noreferrer" class="block rounded-2xl border-2 border-[var(--color-accent)] p-8 sm:p-10 mb-10 group">
+    <p class="font-mono text-xs uppercase tracking-widest text-[var(--color-accent)] mb-3">Live workshop · free</p>
+    <h3 class="text-2xl sm:text-3xl leading-snug" style="font-family: var(--font-display); font-weight: 600;">{speaking.workshop.title}</h3>
+    {speaking.workshop.nextSession && <p class="mt-3 text-base text-[var(--color-muted)]">Next session: {speaking.workshop.nextSession}</p>}
+    <span class="inline-block mt-5 font-mono text-sm group-hover:underline">Register on Luma →</span>
+  </a>
+  <ul class="divide-y divide-[var(--color-fg)]/10">
+    {speaking.past.map(t => (
+      <li class="py-4 flex justify-between items-baseline gap-4">
+        <span class="text-base">{t.title}</span>
+        <span class="font-mono text-xs text-[var(--color-muted)] whitespace-nowrap">{t.venue} · {t.year}</span>
+      </li>
+    ))}
+  </ul>
+</Section>
