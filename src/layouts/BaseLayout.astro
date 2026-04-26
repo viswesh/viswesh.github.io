@@ -10,6 +10,7 @@ interface Props {
   description: string;
 }
 const { title, description } = Astro.props;
+const canonical = Astro.url?.toString() ?? 'https://viswesh.github.io/';
 ---
 <!doctype html>
 <html lang="en">
@@ -19,6 +20,27 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="/og-default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@viswesh" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Viswesh Subramanian",
+      "jobTitle": "Senior Engineering Manager",
+      "worksFor": { "@type": "Organization", "name": "Atlan" },
+      "url": "https://viswesh.github.io",
+      "sameAs": [
+        "https://github.com/viswesh",
+        "https://www.linkedin.com/in/viswesh-subramanian-848a6736",
+        "https://twitter.com/viswesh"
+      ]
+    })} />
     <title>{title}</title>
   </head>
   <body class="antialiased">
