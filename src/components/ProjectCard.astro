@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  blurb: string;
+  ctaLabel: string;
+  ctaUrl: string;
+}
+const { title, blurb, ctaLabel, ctaUrl } = Astro.props;
+---
+<a href={ctaUrl} class="group block rounded-2xl border border-[var(--color-fg)]/15 hover:border-[var(--color-accent)] transition p-8 sm:p-12">
+  <h3 class="text-3xl sm:text-4xl leading-tight" style="font-family: var(--font-display); font-weight: 600;">{title}</h3>
+  <p class="mt-4 text-base sm:text-lg max-w-3xl text-[var(--color-muted)]">{blurb}</p>
+  <span class="inline-block mt-6 font-mono text-sm group-hover:text-[var(--color-accent)] transition">{ctaLabel} →</span>
+</a>
