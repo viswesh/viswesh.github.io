@@ -1,0 +1,36 @@
+---
+import LogoStrip from './LogoStrip.astro';
+
+interface Props {
+  company: string;
+  role: string;
+  start: string;
+  end: string;
+  location?: string;
+  scope: string;
+  outcome: string;
+  depth: string;
+  customerGroup?: string;
+}
+const { company, role, start, end, location, scope, outcome, depth, customerGroup } = Astro.props;
+
+function pretty(d: string): string {
+  if (d === 'present') return 'Present';
+  const [y, m] = d.split('-');
+  const date = new Date(Number(y), Number(m) - 1, 1);
+  return date.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+}
+---
+<article class="relative pl-8 pb-12 border-l border-[var(--color-fg)]/15">
+  <span class="absolute -left-[5px] top-1 size-[10px] rounded-full bg-[var(--color-accent)]"></span>
+  <header class="mb-4">
+    <h3 class="text-2xl" style="font-family: var(--font-display); font-weight: 600;">{role} <span class="text-[var(--color-muted)]">· {company}</span></h3>
+    <p class="text-sm font-mono text-[var(--color-muted)] mt-1">{pretty(start)} – {pretty(end)}{location && ` · ${location}`}</p>
+  </header>
+  <dl class="space-y-3 text-base leading-relaxed max-w-3xl">
+    <div><dt class="font-mono text-xs uppercase tracking-widest text-[var(--color-muted)]">Scope</dt><dd>{scope}</dd></div>
+    <div><dt class="font-mono text-xs uppercase tracking-widest text-[var(--color-muted)]">Outcome</dt><dd>{outcome}</dd></div>
+    <div><dt class="font-mono text-xs uppercase tracking-widest text-[var(--color-muted)]">Depth</dt><dd>{depth}</dd></div>
+  </dl>
+  {customerGroup && <LogoStrip group={customerGroup} caption="Platform customers" />}
+</article>
