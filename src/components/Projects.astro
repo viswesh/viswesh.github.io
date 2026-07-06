@@ -3,7 +3,7 @@ import Section from './Section.astro';
 import ProjectCard from './ProjectCard.astro';
 import { projects } from '../lib/content';
 ---
-<Section id="projects" eyebrow="Projects" title="The work I keep returning to">
+<Section id="projects" eyebrow="Projects" title="Proof of work">
   <div class="space-y-5">
     {projects.map(p => (
       <ProjectCard title={p.title} blurb={p.blurb} ctaLabel={p.cta.label} ctaUrl={p.cta.url} />

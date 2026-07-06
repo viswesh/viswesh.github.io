@@ -1,7 +1,7 @@
 export const site = {
   name: 'Viswesh Subramanian',
   role: 'Senior Engineering Manager at Atlan',
-  tagline: 'I lead engineering teams building production AI agents — and I still ship the harness underneath them.',
+  tagline: 'I lead engineering teams building production AI agents. And I still ship the harness underneath them.',
   location: 'Bangalore · open to remote',
   email: 'ns.viswesh@gmail.com',
   links: {

@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 type Theme = 'light' | 'dark';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
     const stored = (localStorage.getItem('theme') as Theme | null);
-    const initial = stored ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const initial = stored ?? 'dark';
     setTheme(initial);
     document.documentElement.dataset.theme = initial;
   }, []);

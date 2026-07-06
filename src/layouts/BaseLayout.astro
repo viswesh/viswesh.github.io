@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import '@fontsource-variable/fraunces';
+import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/jetbrains-mono';
 import Nav from '../components/Nav.astro';
@@ -42,10 +42,58 @@ const canonical = Astro.url?.toString() ?? 'https://viswesh.github.io/';
       ]
     })} />
     <title>{title}</title>
+    <script is:inline>
+      (() => {
+        let theme = 'dark';
+        try { theme = localStorage.getItem('theme') || 'dark'; } catch {}
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.classList.add('js');
+      })();
+    </script>
   </head>
   <body class="antialiased">
     <a href="#main" class="sr-only focus:not-sr-only">Skip to content</a>
     <Nav />
     <main id="main"><slot /></main>
+    <script>
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const revealEls = document.querySelectorAll('[data-reveal]');
+      if (reduced || !('IntersectionObserver' in window)) {
+        revealEls.forEach((el) => el.classList.add('in-view'));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -10% 0px' }
+        );
+        revealEls.forEach((el) => io.observe(el));
+      }
+
+      const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (finePointer && !reduced) {
+        document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((card) => {
+          card.addEventListener('pointermove', (ev) => {
+            const r = card.getBoundingClientRect();
+            const px = (ev.clientX - r.left) / r.width;
+            const py = (ev.clientY - r.top) / r.height;
+            card.style.setProperty('--tilt-y', `${((px - 0.5) * 5).toFixed(2)}deg`);
+            card.style.setProperty('--tilt-x', `${((0.5 - py) * 5).toFixed(2)}deg`);
+            card.style.setProperty('--spot-x', `${(px * 100).toFixed(1)}%`);
+            card.style.setProperty('--spot-y', `${(py * 100).toFixed(1)}%`);
+          });
+          card.addEventListener('pointerleave', () => {
+            card.style.setProperty('--tilt-x', '0deg');
+            card.style.setProperty('--tilt-y', '0deg');
+          });
+        });
+      }
+    </script>
   </body>
 </html>
