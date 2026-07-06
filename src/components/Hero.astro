@@ -1,15 +1,38 @@
 ---
 import HeroAnimation from './islands/HeroAnimation.tsx';
+import GraphScene from './GraphScene.astro';
+import TraceTicker from './TraceTicker.astro';
 import { site } from '../data/site';
+
+const metrics = [
+  { value: '24+', label: 'engineers led' },
+  { value: '12+', label: 'production agents in service' },
+  { value: '~5h', label: 'ticket resolution, AI in the loop' },
+  { value: 'Leader', label: 'Gartner MQ 2026 · Atlan' },
+];
 ---
-<section id="top" class="px-6 sm:px-10 pt-32 sm:pt-44 pb-20 sm:pb-28 max-w-5xl mx-auto">
-  <HeroAnimation client:load name={site.name} role={site.role} tagline={site.tagline} />
-  <div class="mt-12 flex flex-wrap gap-4">
-    <a href={site.links.workshop} class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--color-fg)] text-[var(--color-bg)] hover:opacity-90 transition" target="_blank" rel="noopener noreferrer">
-      Join the free workshop →
-    </a>
-    <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--color-fg)] hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)] transition">
-      Get in touch
-    </a>
+<section id="top" class="relative overflow-hidden">
+  <GraphScene />
+  <div class="relative px-6 sm:px-10 pt-32 sm:pt-44 pb-16 sm:pb-24 max-w-6xl mx-auto">
+    <HeroAnimation client:load name={site.name} role={site.role} tagline={site.tagline} />
+    <div class="hero-ctas">
+      <div class="mt-12 flex flex-wrap gap-4">
+        <a href={site.links.workshop} class="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--color-accent)] text-[#0B1220] font-medium" target="_blank" rel="noopener noreferrer">
+          Join the free workshop →
+        </a>
+        <a href="#contact" class="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--color-line)] hover:border-[var(--color-accent)]">
+          Get in touch
+        </a>
+      </div>
+      <dl class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 max-w-4xl">
+        {metrics.map((m) => (
+          <div class="metric-cell">
+            <dd class="text-3xl sm:text-4xl font-semibold tracking-tight" style="font-family: var(--font-display)">{m.value}</dd>
+            <dt class="mt-2 font-mono text-xs uppercase tracking-widest text-[var(--color-muted)]">{m.label}</dt>
+          </div>
+        ))}
+      </dl>
+    </div>
   </div>
+  <TraceTicker />
 </section>

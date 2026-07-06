@@ -1,21 +1,44 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
-  --color-bg: #FAF9F6;
-  --color-fg: #0F0F0F;
-  --color-muted: #6B6B6B;
-  --color-accent: #E8A33D;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-bg: #060A12;
+  --color-surface: #0B1220;
+  --color-fg: #E8EDF5;
+  --color-muted: #8A97AC;
+  --color-accent: #FFB224;
+  --color-live: #5EEAD4;
+  --font-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0F0F0F;
-    --color-fg: #FAF9F6;
-    --color-muted: #9A9A9A;
-  }
+:root {
+  --color-line: rgba(232, 237, 245, 0.1);
+  --glow: rgba(255, 178, 36, 0.28);
+}
+
+:root[data-theme="light"] {
+  --color-bg: #F4F6FA;
+  --color-surface: #FFFFFF;
+  --color-fg: #0B1220;
+  --color-muted: #55627A;
+  --color-accent: #A16207;
+  --color-live: #0F766E;
+  --color-line: rgba(11, 18, 32, 0.14);
+  --glow: rgba(161, 98, 7, 0.18);
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #060A12;
+  --color-surface: #0B1220;
+  --color-fg: #E8EDF5;
+  --color-muted: #8A97AC;
+  --color-accent: #FFB224;
+  --color-live: #5EEAD4;
+  --color-line: rgba(232, 237, 245, 0.1);
+  --glow: rgba(255, 178, 36, 0.28);
 }
 
 html {
@@ -25,22 +48,205 @@ html {
   scroll-behavior: smooth;
 }
 
+h1, h2 {
+  font-variation-settings: "wdth" 88;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Scroll-triggered reveals: hidden only when JS is available to reveal them */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+html.js [data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* System card: steel surface, pointer-tracked tilt + amber spotlight */
+.card-glass {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-line);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-surface) 88%, var(--color-fg) 4%),
+    var(--color-surface)
+  );
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.15s ease-out;
+}
+.card-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    260px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    color-mix(in srgb, var(--color-accent) 9%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card-glass:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  box-shadow: 0 12px 48px -18px var(--glow);
+}
+.card-glass:hover::after {
+  opacity: 1;
+}
+
+.card-featured {
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+  box-shadow: 0 0 56px -18px var(--glow);
+}
+
+/* Corner tick on system cards */
+.card-tick::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
+  border-top-left-radius: 0.75rem;
+  pointer-events: none;
+}
+
+/* Live status dot */
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-live);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-live) 70%, transparent);
+  animation: status-pulse 2.4s ease-in-out infinite;
+}
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Hero graph canvas */
+.graph-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.graph-stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+:root[data-theme="light"] .graph-stage {
+  opacity: 0.3;
+}
+.graph-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--color-bg) 0%, transparent 45%),
+    linear-gradient(0deg, var(--color-bg) 2%, transparent 30%);
+}
+
+/* Trace ticker */
+.trace-ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+.trace-track {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  padding: 0.6rem 0;
+  animation: trace-scroll 48s linear infinite;
+}
+.trace-ticker:hover .trace-track {
+  animation-play-state: paused;
+}
+@keyframes trace-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Metrics board */
+.metric-cell {
+  border-left: 1px solid var(--color-line);
+  padding-left: 1rem;
+}
+
+.btn-glow {
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 6px 32px -8px var(--glow);
+  transform: translateY(-1px);
+}
+
+.hero-ctas {
+  animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.9s;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.dot-glow {
+  box-shadow: 0 0 14px var(--glow);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
-}
-
-:root[data-theme="dark"] {
-  --color-bg: #0F0F0F;
-  --color-fg: #FAF9F6;
-  --color-muted: #9A9A9A;
-}
-:root[data-theme="light"] {
-  --color-bg: #FAF9F6;
-  --color-fg: #0F0F0F;
-  --color-muted: #6B6B6B;
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .card-glass {
+    transform: none !important;
+  }
+  .trace-track {
+    animation: none !important;
+  }
 }

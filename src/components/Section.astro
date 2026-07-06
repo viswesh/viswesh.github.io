@@ -7,8 +7,10 @@ interface Props {
 }
 const { id, title, eyebrow, class: className = '' } = Astro.props;
 ---
-<section id={id} class={`px-6 sm:px-10 py-24 sm:py-32 max-w-5xl mx-auto ${className}`}>
-  {eyebrow && <p class="text-sm uppercase tracking-widest text-[var(--color-muted)] font-mono mb-4">{eyebrow}</p>}
-  {title && <h2 class="text-4xl sm:text-5xl mb-12" style="font-family: var(--font-display); font-weight: 600;">{title}</h2>}
-  <slot />
+<section id={id} class={`px-6 sm:px-10 py-24 sm:py-32 max-w-6xl mx-auto ${className}`}>
+  {eyebrow && <p data-reveal class="text-sm uppercase tracking-widest text-[var(--color-muted)] font-mono mb-4"><span class="text-[var(--color-accent)]" aria-hidden="true">//&nbsp;</span>{eyebrow}</p>}
+  {title && <h2 data-reveal class="text-4xl sm:text-5xl mb-12" style="--reveal-delay: 0.1s; font-family: var(--font-display); font-weight: 600;">{title}</h2>}
+  <div data-reveal style="--reveal-delay: 0.2s">
+    <slot />
+  </div>
 </section>

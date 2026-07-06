@@ -5,9 +5,9 @@
     "start": "2025-03",
     "end": "present",
     "location": "Remote",
-    "scope": "Lead 24+ engineers building Atlan's context layer for enterprise AI — unifying data products, domains, lineage, and contracts into a shared Enterprise Data Graph. Cross-functional with a ~200-person engineering org.",
+    "scope": "Lead 24+ engineers building Atlan's context layer for enterprise AI, unifying data products, domains, lineage, and contracts into a shared Enterprise Data Graph. Cross-functional with a ~200-person engineering org.",
     "outcome": "Atlan moved Visionary → Leader on the 2026 Gartner MQ for D&A Governance during this tenure. Harness work driving customer-ticket resolution to ~5 hours with AI in the loop.",
-    "depth": "Architecting the 9-component agent harness — context engineering, memory, cost controls, observability, evals. Shipping MCP integrations (Drive & Discover demo).",
+    "depth": "Architecting the 9-component agent harness: context engineering, memory, cost controls, observability, evals. Shipping MCP integrations (Drive & Discover demo).",
     "customers": ["nasdaq", "gm", "fox", "unilever", "hubspot"]
   },
   {
@@ -16,7 +16,7 @@
     "start": "2021-11",
     "end": "2025-04",
     "location": "Remote, India",
-    "scope": "Led 12 engineers owning Privacy, Unified Profile, Unified Permissions Framework, Use Case Playbooks, and Sandbox management for Adobe Experience Platform — the CDP behind Real-Time CDP and Journey Optimizer. Built the Bangalore and Noida teams complementing Adobe's US-side org.",
+    "scope": "Led 12 engineers owning Privacy, Unified Profile, Unified Permissions Framework, Use Case Playbooks, and Sandbox management for Adobe Experience Platform, the CDP behind Real-Time CDP and Journey Optimizer. Built the Bangalore and Noida teams complementing Adobe's US-side org.",
     "outcome": "Shipped Privacy stack (Data Hygiene, Privacy Console, audits) automating GDPR/CCPA across Experience Cloud. Unified Permissions Framework went GA as Attribute-Based Access Control across Real-Time CDP and Journey Optimizer. Use Case Playbooks shipped a Playbook Authoring Framework (Apr 2025). Sandbox tooling shipped iterative cross-sandbox config migration (Jun 2025) and B2B architecture support (Jul 2025). Platform underneath: 10–14 second customer-data refresh cycle; streaming segmentation up to 15K events/sec.",
     "depth": "React/TypeScript SPAs at cloud-native scale. Architected pattern convergence and infrastructure upgrades. Defined developer-velocity tooling and the experimentation environment.",
     "customers": ["coca-cola", "home-depot", "gm", "tsb", "mlb", "panera", "henkel", "telefonica", "t-rowe-price", "servicenow", "ey"]

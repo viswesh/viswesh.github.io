@@ -1,14 +1,20 @@
 [
   {
+    "slug": "factory-ai",
+    "title": "Factory AI: signal-to-software, run by agents",
+    "blurb": "An agentic software factory inside Atlan. Agents listen to customer signals (tickets, enhancement requests, telemetry), mine what matters, and decide what to build. Greenfield work goes end to end: PRD, TRD, implementation design, build, human-in-the-loop reviews, deploy, instrument, close the loop. Customer issues run in reverse: agents read logs and self-heal. The outcome: more features released, more customer issues resolved, and an organization freed to take on newer problems and scale faster.",
+    "cta": {"label": "Ask me about Factory AI", "url": "/#contact"}
+  },
+  {
     "slug": "agent-harness-workshop",
-    "title": "Agent Harness Workshop — eCommerce Support Agent",
-    "blurb": "A 90-minute workshop and a working reference implementation for production AI agent infrastructure: input/output guardrails, agent loop, context engineering, memory, MCP tool access, per-ticket sandboxes, LiteLLM cost tracking, Langfuse tracing. Cloneable repo, recorded session, adaptable architecture — built for engineering leaders who are shipping agents without half the guardrails.",
+    "title": "Agent Harness Workshop: eCommerce Support Agent",
+    "blurb": "A 90-minute workshop and a working reference implementation for production AI agent infrastructure: input/output guardrails, agent loop, context engineering, memory, MCP tool access, per-ticket sandboxes, LiteLLM cost tracking, Langfuse tracing. Cloneable repo, recorded session, adaptable architecture, built for engineering leaders who are shipping agents without half the guardrails.",
     "cta": {"label": "Open the workshop site", "url": "https://viswesh.github.io/ecommerceSupportAgent/"}
   },
   {
     "slug": "agent-harness-repo",
     "title": "Reference repo: ecommerceSupportAgent",
-    "blurb": "The cloneable code behind the workshop. Real agent loop, MCP tools, per-ticket sandboxes, evals, observability — wired together end-to-end so engineering teams can fork and ship.",
+    "blurb": "The cloneable code behind the workshop. Real agent loop, MCP tools, per-ticket sandboxes, evals, observability, wired together end-to-end so engineering teams can fork and ship.",
     "cta": {"label": "View on GitHub", "url": "https://github.com/viswesh/ecommerceSupportAgent"}
   }
 ]

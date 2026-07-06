@@ -1,0 +1,28 @@
+---
+// Illustrative agent-run trace, styled like an observability stream.
+const trace = [
+  { tool: 'context.retrieve', detail: 'domain=finance depth=3', ms: 42, ok: true },
+  { tool: 'graph.walk', detail: 'lineage upstream · 14 hops', ms: 87, ok: true },
+  { tool: 'policy.eval', detail: 'pii_masking · allow', ms: 12, ok: true },
+  { tool: 'memory.read', detail: 'episodic · 6 hits', ms: 23, ok: true },
+  { tool: 'contract.check', detail: 'schema drift · none', ms: 31, ok: true },
+  { tool: 'agent.plan', detail: '4 steps · budget 120k', ms: 640, ok: true },
+  { tool: 'ticket.resolve', detail: 'root cause linked', ms: 1104, ok: true },
+  { tool: 'evals.score', detail: 'faithfulness 0.97', ms: 208, ok: true },
+  { tool: 'memory.write', detail: 'decision + citations', ms: 18, ok: true },
+  { tool: 'cost.guard', detail: 'run $0.14 · under cap', ms: 4, ok: true },
+];
+const doubled = [...trace, ...trace];
+---
+<div class="trace-ticker" role="presentation" aria-hidden="true">
+  <div class="trace-track">
+    {doubled.map((t) => (
+      <span class="flex items-center gap-2 font-mono text-xs whitespace-nowrap text-[var(--color-muted)]">
+        <span class="text-[var(--color-live)]">✓</span>
+        <span class="text-[var(--color-fg)]/80">{t.tool}</span>
+        <span>{t.detail}</span>
+        <span class="text-[var(--color-accent)]/80">{t.ms}ms</span>
+      </span>
+    ))}
+  </div>
+</div>
